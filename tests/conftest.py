@@ -8,6 +8,7 @@ from typing import Generic, TypeVar
 from database import database as Database
 from Model.Model import Model
 from Model.Session import Session
+from Model.User import User
 
 from config import DB_HOST, DB_NAME
 
@@ -38,9 +39,9 @@ def test_model_db_factory(model: T, postgresql: connection) -> T:
 def test_session(postgresql: connection) -> Session:
     return test_model_db_factory(Session, postgresql)
 
-# @pytest.fixture
-# def test_user(postgresql: connection) -> User:
-#     return test_model_db_factory(User, postgresql)
+@pytest.fixture
+def test_user(postgresql: connection) -> User:
+    return test_model_db_factory(User, postgresql)
 
 
 # db: Database = Database()
