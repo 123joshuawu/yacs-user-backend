@@ -27,14 +27,14 @@ sessions: List[UserModel] = [
 ]
 
 # Put unit tests here
-# def simple_use_test(test_user: User) -> None:
-#     u: UserModel = sessions[0]
+def test_user(test_user: UserModel) -> None:
+    u: User = users[0]
 
-#     assert len(test_user.getUser()) == 0
+    # assert len(test_user.getUser()) == 0
 
-#     assert test_user.addUser(**asdict(u)) == 0
+    # assert test_user.addUser(**asdict(u)) == 0
     
-#     assert len(test_user.getUser()) == 1
+    # assert len(test_user.getUser()) == 1
 
 
 
