@@ -22,33 +22,31 @@ sessions: List[SessionModel] = [
 ]
 
 # Put unit tests here
-# def test_session(test_session: Session) -> None:
-def test_session(test_session: Session) -> None:
-    # test_session: Session = Session()
-    s: SessionModel = sessions[0]
+def test_session(test_session_model: Session) -> None:
+    fake_session: SessionModel = sessions[0]
 
-    s.sessionid = test_session.createSessionID()
+    fake_session.sessionid = test_session_model.createSessionID()
 
-    assert len(test_session.getSession()) == 0
+    assert len(test_session_model.getSession()) == 0
     print()
 
-    assert test_session.startSession(s.sessionid, s.uid, s.start_time) == 0
+    assert test_session_model.startSession(fake_session.sessionid, fake_session.uid, fake_session.start_time) == 0
 
-    results = test_session.getSession()
+    results = test_session_model.getSession()
     assert len(results) == 1
-    assert results[0][0] == s.sessionid
+    assert results[0][0] == fake_session.sessionid
     assert results[0][3] is None 
   
-    results = test_session.getSession(s.sessionid)
+    results = test_session_model.getSession(fake_session.sessionid)
     assert len(results) == 1
-    assert results[0][0] == s.sessionid
+    assert results[0][0] == fake_session.sessionid
     assert results[0][3] is None
 
-    assert test_session.endSession(s.sessionid) == 0
+    assert test_session_model.endSession(fake_session.sessionid) == 0
 
-    results = test_session.getSession(s.sessionid)
+    results = test_session_model.getSession(fake_session.sessionid)
     assert len(results) == 1
-    assert results[0][0] == s.sessionid
+    assert results[0][0] == fake_session.sessionid
     assert results[0][3] is not None
 
     

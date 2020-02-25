@@ -40,7 +40,7 @@ def test_session(postgresql: connection) -> Session:
     return test_model_db_factory(Session, postgresql)
 
 @pytest.fixture
-def test_user(postgresql: connection) -> User:
+def test_user_model(postgresql: connection) -> User:
     return test_model_db_factory(User, postgresql)
 
 
