@@ -36,7 +36,7 @@ def test_model_db_factory(model: T, postgresql: connection) -> T:
 
 #Creates pytest fixture for test session object and initializes session table
 @pytest.fixture
-def test_session(postgresql: connection) -> Session:
+def test_session_model(postgresql: connection) -> Session:
     return test_model_db_factory(Session, postgresql)
 
 @pytest.fixture
