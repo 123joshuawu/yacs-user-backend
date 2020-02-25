@@ -8,6 +8,7 @@ from typing import Generic, TypeVar
 from database import database as Database
 from Model.Model import Model
 from Model.Session import Session
+from Model.User import User
 
 from config import DB_HOST, DB_NAME
 
