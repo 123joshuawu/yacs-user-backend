@@ -22,7 +22,7 @@ class UserModel:
 
 
 # Dummy data
-sessions: List[UserModel] = [
+users: List[UserModel] = [
     UserModel(f"Name{i}", f"email{i}@gmail.com", f"{i}"*8, f"Password{i}", f"Major{i}", f"Degree{i}") for i in range(1, 9)
 ]
 
