@@ -1,7 +1,7 @@
 def checkKeys(form, keys):
 
     if form == None:
-        return True
+        return False
 
     if type(form) is not dict:
         return False
